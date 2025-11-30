@@ -44,6 +44,14 @@ public class CustomerService {
     }
 
 
-
-
+    public Optional<CustomerDTO> searchCustomer(int id) {
+        return customerRepository.findById(id).map(
+                c -> new CustomerDTO(
+                    c.getCustomerId(),
+                    c.getName(),
+                    c.getAddress(),
+                    c.getContact()
+                )
+        );
+    }
 }

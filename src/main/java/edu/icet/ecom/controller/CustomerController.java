@@ -4,10 +4,10 @@ import edu.icet.ecom.model.dto.CustomerDTO;
 import edu.icet.ecom.service.CustomerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import javax.swing.text.html.Option;
+import java.util.Optional;
 
 @RequiredArgsConstructor
 @RestController
@@ -19,5 +19,12 @@ public class CustomerController {
     public ResponseEntity<CustomerDTO> addCustomer(@RequestBody CustomerDTO customerDTO) {
         CustomerDTO customerSaved = customerService.addCustomer(customerDTO);
         return ResponseEntity.ok(customerSaved);
+    }
+
+    @GetMapping("/searchCustomer={id}")
+    public ResponseEntity<?> searchCustomer(@PathVariable int id) {
+        Optional<CustomerDTO> result = customerService.searchCustomer(id);
+
+        return result.isPresent()? ResponseEntity.ok(result.get()) : ResponseEntity.status(404).body("Customer Not Found");
     }
 }
