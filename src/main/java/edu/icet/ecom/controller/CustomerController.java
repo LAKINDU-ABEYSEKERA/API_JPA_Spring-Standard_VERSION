@@ -27,4 +27,10 @@ public class CustomerController {
 
         return result.isPresent()? ResponseEntity.ok(result.get()) : ResponseEntity.status(404).body("Customer Not Found");
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteCustomer(@PathVariable int id){
+        String msg = customerService.removeCustomer(id);
+        return ResponseEntity.ok(msg);
+    }
 }
