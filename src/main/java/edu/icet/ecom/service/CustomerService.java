@@ -54,4 +54,12 @@ public class CustomerService {
                 )
         );
     }
+
+    public String removeCustomer(int id) {
+        if (customerRepository.existsById(id)){
+            customerRepository.deleteById(id);
+            return "Customer Deleted Successfully";
+        }
+        return "Customer doesn't Exists..!";
+    }
 }
