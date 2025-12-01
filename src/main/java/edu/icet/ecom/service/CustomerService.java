@@ -73,4 +73,25 @@ public class CustomerService {
                 ))
                 .collect(Collectors.toList());
     }
+
+    public Optional<CustomerDTO> updateCustomer(int id, CustomerDTO dto) {
+        return customerRepository.findById(id)
+                .map(c -> {
+                    Customer updated = customerRepository.save(
+                            new Customer(
+                                    id,
+                                    dto.getName(),
+                                    dto.getAddress(),
+                                    dto.getContact()
+                            )
+                    );
+                    return new CustomerDTO(
+                            updated.getCustomerId(),
+                            updated.getName(),
+                            updated.getAddress(),
+                            updated.getContact()
+                    );
+                });
+
+    }
 }
