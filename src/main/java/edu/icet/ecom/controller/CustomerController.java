@@ -1,6 +1,7 @@
 package edu.icet.ecom.controller;
 
 import edu.icet.ecom.model.dto.CustomerDTO;
+import edu.icet.ecom.model.entity.Customer;
 import edu.icet.ecom.service.CustomerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -35,9 +36,22 @@ public class CustomerController {
         return ResponseEntity.ok(msg);
     }
 
+    @GetMapping("getAllCustomers")
     public ResponseEntity<List<CustomerDTO>> getAll() {
         List<CustomerDTO> list = customerService.getAllCustomers();
         return ResponseEntity.ok(list);
 
+    }
+
+    @PutMapping("{id}")
+    public ResponseEntity<?> updateCustomer(
+            @PathVariable int id,
+            @RequestBody CustomerDTO dto
+    ){
+        Optional<CustomerDTO> updated = customerService.updateCustomer(id,dto);
+
+        return updated.isPresent()
+                ? ResponseEntity.ok(updated.get())
+                : ResponseEntity.status(404).body("Customer doesn't exist!");
     }
 }
