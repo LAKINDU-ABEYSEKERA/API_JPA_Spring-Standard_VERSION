@@ -62,4 +62,15 @@ public class CustomerService {
         }
         return "Customer doesn't Exists..!";
     }
+
+    public List<CustomerDTO> getAllCustomers() {
+        return customerRepository.findAll().stream()
+                .map(c -> new CustomerDTO(
+                        c.getCustomerId(),
+                        c.getName(),
+                        c.getAddress(),
+                        c.getContact()
+                ))
+                .collect(Collectors.toList());
+    }
 }

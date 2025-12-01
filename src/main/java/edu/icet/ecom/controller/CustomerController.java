@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.swing.text.html.Option;
+import java.util.List;
 import java.util.Optional;
 
 @RequiredArgsConstructor
@@ -32,5 +33,11 @@ public class CustomerController {
     public ResponseEntity<String> deleteCustomer(@PathVariable int id){
         String msg = customerService.removeCustomer(id);
         return ResponseEntity.ok(msg);
+    }
+
+    public ResponseEntity<List<CustomerDTO>> getAll() {
+        List<CustomerDTO> list = customerService.getAllCustomers();
+        return ResponseEntity.ok(list);
+
     }
 }
