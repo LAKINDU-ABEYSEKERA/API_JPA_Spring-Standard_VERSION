@@ -1,6 +1,5 @@
 package edu.icet.ecom.service;
 
-import edu.icet.ecom.model.dto.CustomerDTO;
 import edu.icet.ecom.model.dto.ProductDTO;
 import edu.icet.ecom.model.entity.Product;
 import edu.icet.ecom.repository.ProductRepository;
@@ -43,5 +42,15 @@ public class ProductService {
                 productDTO.getName(),
                 productDTO.getPrice()
         ));
+    }
+
+    public Optional<ProductDTO> searchCustomer(int id) {
+        return  productRepository.findById(id).map(
+                p -> new ProductDTO(
+                        p.getProductId(),
+                        p.getName(),
+                        p.getPrice()
+                )
+        );
     }
 }
