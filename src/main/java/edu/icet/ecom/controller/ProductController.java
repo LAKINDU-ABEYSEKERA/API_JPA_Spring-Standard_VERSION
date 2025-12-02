@@ -1,13 +1,9 @@
 package edu.icet.ecom.controller;
 
-import edu.icet.ecom.model.dto.CustomerDTO;
 import edu.icet.ecom.model.dto.ProductDTO;
 import edu.icet.ecom.service.ProductService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 @RequiredArgsConstructor
@@ -22,6 +18,10 @@ public class ProductController {
         return productService.addCustomer(productDTO);
     }
 
+    @GetMapping("/searchProduct={id}")
+    public Optional<ProductDTO> searchProduct(@PathVariable int id){
+        return productService.searchCustomer(id);
+    }
 
 
 }

@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="57f4f7f6-142d-48a3-8606-b99bfcaf06c2" name="Changes" comment="New Entity Declared!...(Product)">
+    <list default="true" id="57f4f7f6-142d-48a3-8606-b99bfcaf06c2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/icet/ecom/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/icet/ecom/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/icet/ecom/model/dto/ProductDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/icet/ecom/model/dto/ProductDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/icet/ecom/model/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/icet/ecom/model/entity/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/icet/ecom/repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/icet/ecom/repository/ProductRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/icet/ecom/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/icet/ecom/service/ProductService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,7 +69,7 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "git-widget-placeholder": "Dev",
+    "git-widget-placeholder": "Main",
     "kotlin-language-version-configured": "true",
     "onboarding.tips.debug.path": "F:/ICP/In_Class_Tasks/Spring Boot/Day 05/Special_Task_HibernateSpring_Advanced/src/main/java/edu/icet/ecom/Main.java"
   }
@@ -163,7 +161,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/edu/icet/ecom/Main.java</url>
-          <line>10</line>
+          <line>9</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
